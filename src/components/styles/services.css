@@ -1,0 +1,78 @@
+/* Servicios generales */
+.servicios {
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content {
+    max-width: 1000px;
+    text-align: center;
+  }
+  
+  .titulo-servicios {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .descripcion-servicios {
+    font-size: 1.2rem;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+  
+  /* Carrusel */
+  .lista-servicios .servicio {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .lista-servicios .servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icono {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #111827;
+  }
+  
+  .servicio-titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 10px;
+  }
+  
+  .servicio-descripcion {
+    font-size: 1rem;
+    color: #6b7280;
+  }
+  
+  /* Ajustes del carrusel */
+  .slick-prev, .slick-next {
+    color: #111827;
+    font-size: 1.5rem;
+    z-index: 1;
+  }
+  
+  .slick-dots li button:before {
+    color: #6b7280;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #111827;
+  }
+  
+  
