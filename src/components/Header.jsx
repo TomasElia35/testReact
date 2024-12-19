@@ -1,68 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
 import './styles/Header.css';
+import React from "react";
+import { motion } from "framer-motion";
+
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Controla el estado de desplazamiento
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const navLinks = ["Inicio", "Servicios", "Nosotros", "Contacto"];
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="logo">
-        <span>MiEmpresa</span>
+    <motion.header
+      className="header"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="header-logo">
+        <motion.h1
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <a href="/">MiLogo</a>
+        </motion.h1>
       </div>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        <div className={`bar ${isOpen ? 'rotate1' : ''}`}></div>
-        <div className={`bar ${isOpen ? 'fade' : ''}`}></div>
-        <div className={`bar ${isOpen ? 'rotate2' : ''}`}></div>
-      </button>
-      <nav className={`nav ${isOpen ? 'open' : ''}`}>
+      <nav className="header-nav">
         <ul className="nav-list">
-          <li className="nav-item">
-            <Link to="inicio" smooth={true} duration={500} onClick={toggleMenu}>
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="about" smooth={true} duration={500} onClick={toggleMenu}>
-              About
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="services" smooth={true} duration={500} onClick={toggleMenu}>
-              Services
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="portfolio" smooth={true} duration={500} onClick={toggleMenu}>
-              Portfolio
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="contact" smooth={true} duration={500} onClick={toggleMenu}>
-              Contact
-            </Link>
-          </li>
+          {navLinks.map((link, index) => (
+            <motion.li
+              key={index}
+              className="nav-item"
+              whileHover={{ scale: 1.2, color: "#007bff" }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <a href={`#${link.toLowerCase()}`}>{link}</a>
+            </motion.li>
+          ))}
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

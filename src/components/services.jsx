@@ -1,65 +1,61 @@
 import React from "react";
-import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from "framer-motion";
+import "./styles/services.css";
 
-const Services = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+const servicios = [
+  {
+    id: 1,
+    titulo: "Diseño Web",
+    descripcion: "Creamos sitios web modernos y responsivos para destacar tu marca.",
+    icono: "🌐",
+  },
+  {
+    id: 2,
+    titulo: "Desarrollo de Apps",
+    descripcion: "Desarrollamos aplicaciones móviles funcionales y de alto rendimiento.",
+    icono: "📱",
+  },
+  {
+    id: 3,
+    titulo: "Marketing Digital",
+    descripcion: "Estrategias innovadoras para aumentar tu presencia en línea.",
+    icono: "📈",
+  },
+];
 
+const Servicios = () => {
   return (
     <section className="servicios">
-      <div className="content">
-        <h2 className="titulo-servicios">Nuestros Servicios</h2>
-        <p className="descripcion-servicios">
-          Ofrecemos una variedad de servicios diseñados para satisfacer las necesidades de nuestros clientes.
-        </p>
-        <Slider {...settings} className="lista-servicios">
-          <div className="servicio">
-            <span className="icono">💻</span>
-            <h3 className="servicio-titulo">Desarrollo Web</h3>
-            <p className="servicio-descripcion">
-              Creamos sitios web modernos, responsivos y personalizados.
-            </p>
-          </div>
-          <div className="servicio">
-            <span className="icono">📱</span>
-            <h3 className="servicio-titulo">Apps Móviles</h3>
-            <p className="servicio-descripcion">
-              Diseñamos aplicaciones intuitivas para Android e iOS.
-            </p>
-          </div>
-          <div className="servicio">
-            <span className="icono">☁️</span>
-            <h3 className="servicio-titulo">Soluciones en la Nube</h3>
-            <p className="servicio-descripcion">
-              Optimizamos tus operaciones con tecnología cloud.
-            </p>
-          </div>
-          <div className="servicio">
-            <span className="icono">🔒</span>
-            <h3 className="servicio-titulo">Ciberseguridad</h3>
-            <p className="servicio-descripcion">
-              Protegemos tus datos con estrategias avanzadas de seguridad.
-            </p>
-          </div>
-        </Slider>
+      <motion.h2
+        className="servicios-titulo"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Nuestros Servicios
+      </motion.h2>
+      
+      <div className="servicios-lista">
+        {servicios.map((servicio) => (
+          <motion.div
+            key={servicio.id}
+            className="servicio-item"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="servicio-icono">{servicio.icono}</div>
+            <h3>{servicio.titulo}</h3>
+            <p>{servicio.descripcion}</p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default Services;
+export default Servicios;

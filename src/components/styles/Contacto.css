@@ -1,0 +1,82 @@
+/* Contenedor principal */
+.contacto {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f9f9f9, #eaeff5);
+    color: #333;
+    text-align: center;
+  }
+  
+  .contacto-titulo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+  }
+  
+  .contacto-titulo p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  /* Formulario */
+  .contacto-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-grupo {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .form-grupo label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .form-grupo input,
+  .form-grupo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-grupo input:focus,
+  .form-grupo textarea:focus {
+    border-color: #007bff;
+  }
+  
+  /* Botón */
+  .form-boton {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-boton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .contacto-formulario {
+      padding: 1.5rem;
+    }
+  }
+  

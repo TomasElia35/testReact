@@ -1,78 +1,63 @@
-/* Servicios generales */
+/* Contenedor general */
 .servicios {
-    background: linear-gradient(135deg, #ffffff, #f3f4f6);
-    padding: 60px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f9f9f9, #eaeff5);
+  color: #333;
+  text-align: center;
+}
+
+.servicios-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #007bff;
+}
+
+/* Estilo de la lista de servicios */
+.servicios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.servicio-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono del servicio */
+.servicio-icono {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+/* Título y descripción */
+.servicio-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.servicio-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .servicios-lista {
+    flex-direction: column;
+    gap: 1.5rem;
   }
-  
-  .content {
-    max-width: 1000px;
-    text-align: center;
-  }
-  
-  .titulo-servicios {
-    font-size: 2.5rem;
-    color: #111827;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .descripcion-servicios {
-    font-size: 1.2rem;
-    color: #4b5563;
-    line-height: 1.8;
-    margin-bottom: 40px;
-  }
-  
-  /* Carrusel */
-  .lista-servicios .servicio {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .lista-servicios .servicio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .icono {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #111827;
-  }
-  
-  .servicio-titulo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 10px;
-  }
-  
-  .servicio-descripcion {
-    font-size: 1rem;
-    color: #6b7280;
-  }
-  
-  /* Ajustes del carrusel */
-  .slick-prev, .slick-next {
-    color: #111827;
-    font-size: 1.5rem;
-    z-index: 1;
-  }
-  
-  .slick-dots li button:before {
-    color: #6b7280;
-  }
-  
-  .slick-dots li.slick-active button:before {
-    color: #111827;
-  }
-  
-  
+}

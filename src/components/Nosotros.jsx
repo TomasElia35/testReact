@@ -1,41 +1,43 @@
 import React from 'react';
 import './styles/Nosotros.css';
+import { motion } from "framer-motion";
 
-const Nosotros = () => {
+const AboutUs = () => {
   return (
-    <section className="nosotros">
-      <div className="content">
-        <h2 className="titulo-nosotros">Sobre Nosotros</h2>
-        <p className="descripcion-nosotros">
-          En <strong>MinimalCorp</strong>, creemos en la simplicidad como motor de la innovación. 
-          Nuestro equipo combina diseño moderno con tecnología avanzada para ofrecer soluciones 
-          que transforman ideas en realidad.
+    <section className="about-us">
+      {/* Imagen con animación de entrada */}
+      <motion.div
+        className="about-us-image"
+        initial={{ x: -200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/path-to-image.jpg" alt="Equipo" />
+      </motion.div>
+
+      {/* Contenido con animaciones */}
+      <motion.div
+        className="about-us-content"
+        initial={{ y: 200, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <h2>Sobre Nosotros</h2>
+        <p>
+          Somos un equipo apasionado dedicado a crear soluciones innovadoras.
+          Nuestro enfoque está en la excelencia y la creatividad para satisfacer
+          las necesidades de nuestros clientes.
         </p>
-        <div className="valores">
-          <div className="valor">
-            <span className="icono">🌟</span>
-            <h3 className="valor-titulo">Innovación</h3>
-            <p className="valor-descripcion">Buscamos siempre nuevas maneras de mejorar.</p>
-          </div>
-          <div className="valor">
-            <span className="icono">🤝</span>
-            <h3 className="valor-titulo">Confianza</h3>
-            <p className="valor-descripcion">Construimos relaciones sólidas con nuestros clientes.</p>
-          </div>
-          <div className="valor">
-            <span className="icono">🚀</span>
-            <h3 className="valor-titulo">Excelencia</h3>
-            <p className="valor-descripcion">Nos esforzamos por entregar resultados de alta calidad.</p>
-          </div>
-          <div className="valor">
-            <span className="icono">🌍</span>
-            <h3 className="valor-titulo">Sostenibilidad</h3>
-            <p className="valor-descripcion">Nos comprometemos con el cuidado del medio ambiente.</p>
-          </div>
-        </div>
-      </div>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="about-us-button"
+        >
+          Conoce Más
+        </motion.button>
+      </motion.div>
     </section>
   );
 };
 
-export default Nosotros;
+export default AboutUs;

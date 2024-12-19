@@ -1,97 +1,62 @@
-/* src/components/Nosotros.css */
-
-/* Estilo general */
-.nosotros {
-  background: #f9fafb; /* Fondo blanco-gris */
-  padding: 60px 20px;
+.about-us {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+  color: #333;
 }
 
-.content {
-  max-width: 800px;
-  text-align: center;
+.about-us-image img {
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Título de la sección */
-.titulo-nosotros {
+.about-us-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-us-content h2 {
   font-size: 2.5rem;
-  color: #111827; /* Gris oscuro */
-  margin-bottom: 20px;
-  font-weight: bold;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
+  margin-bottom: 1rem;
+  color: #007bff;
 }
 
-/* Descripción */
-.descripcion-nosotros {
+.about-us-content p {
   font-size: 1.2rem;
-  color: #4b5563; /* Gris medio */
-  line-height: 1.8;
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.3s;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
-/* Contenedor de valores */
-.valores {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* Caja de cada valor */
-.valor {
-  background: #ffffff; /* Fondo blanco */
-  border: 1px solid #e5e7eb; /* Borde gris claro */
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  flex: 1;
-  min-width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra ligera */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.valor:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Ícono */
-.icono {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #111827; /* Gris oscuro */
-}
-
-/* Título del valor */
-.valor-titulo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #111827; /* Gris oscuro */
-  margin-bottom: 10px;
-}
-
-/* Descripción del valor */
-.valor-descripcion {
+.about-us-button {
+  padding: 0.8rem 2rem;
   font-size: 1rem;
-  color: #6b7280; /* Gris más claro */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Animación general */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.about-us-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us-image img {
+    max-width: 300px;
+  }
+
+  .about-us-content {
+    margin-top: 2rem;
   }
 }
