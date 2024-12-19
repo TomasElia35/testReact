@@ -1,8 +1,6 @@
 import React from "react";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./styles/services.css";
 
 const servicios = [
@@ -27,6 +25,12 @@ const servicios = [
 ];
 
 const Servicios = () => {
+  const navigate = useNavigate(); // Hook para navegar a otra ruta
+
+  const handleVerProductos = () => {
+    navigate("/productos");
+  };
+
   return (
     <section className="servicios">
       <motion.h2
@@ -54,6 +58,16 @@ const Servicios = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Botón "Ver productos" */}
+      <motion.button
+        className="servicios-boton"
+        onClick={handleVerProductos}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        Ver productos
+      </motion.button>
     </section>
   );
 };
