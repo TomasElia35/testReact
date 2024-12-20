@@ -1,82 +1,131 @@
-/* Contenedor principal */
-.contacto {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #f9f9f9, #eaeff5);
-    color: #333;
-    text-align: center;
+/* Animaciones */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .contacto-titulo h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #007bff;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .contacto-titulo p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 2rem;
+}
+
+/* Animaciones iniciales */
+.Contacto {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Activar animación */
+.Contacto.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInSlideUp 0.6s ease forwards;
+}
+
+/* Sección Contacto */
+.Contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 100px 20px;
+  background-color: #f4f4f4;
+}
+
+/* Información del lado izquierdo */
+.Contacto-info {
+  flex: 1;
+  max-width: 50%;
+}
+
+.Contacto-info h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+.ubicacion h3 {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.ubicacion iframe {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Formulario del lado derecho */
+.Contacto-formulario {
+  flex: 1;
+  max-width: 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Contacto-formulario h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form .form-group {
+  margin-bottom: 15px;
+}
+
+form .form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+form .form-group input,
+form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form .form-group textarea {
+  resize: none;
+}
+
+form button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #cc0000;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .Contacto {
+    flex-direction: column;
   }
-  
-  /* Formulario */
-  .contacto-formulario {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .Contacto-info,
+  .Contacto-formulario {
+    max-width: 100%;
   }
-  
-  .form-grupo {
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-  
-  .form-grupo label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .form-grupo input,
-  .form-grupo textarea {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-grupo input:focus,
-  .form-grupo textarea:focus {
-    border-color: #007bff;
-  }
-  
-  /* Botón */
-  .form-boton {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-boton:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .contacto-formulario {
-      padding: 1.5rem;
-    }
-  }
-  
+}
+

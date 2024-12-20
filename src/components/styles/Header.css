@@ -1,63 +1,99 @@
-/* Contenedor principal */
+/* Header Base Styles */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  animation: slideDown 0.8s ease-out;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Animaciones */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.header-logo h1 {
-  font-size: 1.8rem;
-  margin: 0;
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header-logo a {
-  text-decoration: none;
-  color: #fff;
+.header .logo a {
+  font-size: 1.5rem;
   font-weight: bold;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #ff0000; /* Rojo característico */
 }
 
-.header-logo a:hover {
-  color: #ffcc00;
-}
-
-/* Navegación */
-.header-nav .nav-list {
-  list-style: none;
+.nav {
   display: flex;
-  gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.header-nav .nav-item a {
+.nav-links li a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
   font-size: 1rem;
-  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.header-nav .nav-item a:hover {
-  color: #ffcc00;
+.nav-links li a:hover {
+  color: #ff0000; /* Rojo característico */
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .header {
+/* Responsive Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .nav {
+    display: none;
     flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
   }
 
-  .header-nav .nav-list {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 }
+

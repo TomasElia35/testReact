@@ -1,68 +1,83 @@
-/* Contenedor principal */
+/* Estilo principal */
 .inicio {
+  height: 100vh; /* Ocupa toda la pantalla */
+  background: url('https://source.unsplash.com/featured/?soccer,jersey') no-repeat center center/cover;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #ffffff, #f7f9fc);
-  color: #333;
+  position: relative;
 }
 
-.inicio-contenido {
-  max-width: 50%;
+/* Capa de superposición */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.inicio-titulo {
-  font-size: 3rem;
-  color: #007bff;
-  margin-bottom: 1rem;
-}
-
-.inicio-titulo .destacado {
-  color: #ff5722;
-}
-
-.inicio-descripcion {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-
-.inicio-boton {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+/* Contenido principal */
+.content {
   color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-align: center;
+  padding: 20px;
+  opacity: 0; /* Comienza invisible */
+  transform: translateY(20px); /* Animación inicial */
+  animation: fadeInUp 1s ease-out forwards;
 }
 
-.inicio-boton:hover {
-  background-color: #0056b3;
-}
-
-/* Imagen destacada */
-.inicio-imagen img {
-  max-width: 400px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .inicio {
-    flex-direction: column;
-    text-align: center;
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .inicio-contenido {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .inicio-imagen img {
-    max-width: 300px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ff0000;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #fff;
+  animation: fadeInUp 1.4s ease-out forwards;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .slogan {
+    font-size: 0.9rem;
+  }
+}
+
