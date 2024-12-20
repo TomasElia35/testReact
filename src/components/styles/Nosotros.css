@@ -1,23 +1,21 @@
-/* Agrandar la sección */
+/* Estilos principales */
 .nosotros {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 20px; /* Aumentamos el padding */
+  padding: 11% 20px;
   background-color: #f9f9f9;
-  min-height: 80vh; /* Mínimo 80% del alto de la pantalla */
 }
 
-/* Contenido más espacioso */
 .nosotros-content {
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
-  gap: 40px; /* Más espacio entre elementos */
+  gap: 20px;
   align-items: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* Para animación inicial */
+  transform: translateY(20px); /* Comienza desplazado */
+  animation: fadeInUp 1s ease-out forwards; /* Animación al cargar */
 }
 
 /* Texto */
@@ -27,15 +25,16 @@
 }
 
 .nosotros-text h2 {
-  font-size: 3rem; /* Texto más grande */
+  font-size: 2.5rem;
   color: #ff0000; /* Rojo característico */
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  animation: fadeInLeft 1.2s ease-out forwards; /* Animación independiente */
 }
 
 .nosotros-text p {
-  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  font-size: 1rem;
   color: #333;
-  line-height: 1.8; /* Mayor separación entre líneas */
+  line-height: 1.6;
 }
 
 /* Imagen */
@@ -47,9 +46,8 @@
 .nosotros-image img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-  max-height: 400px; /* Controlar la altura máxima de la imagen */
-  object-fit: cover; /* Ajustar imagen al espacio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 1.4s ease-out forwards; /* Animación independiente */
 }
 
 /* Animaciones */
@@ -61,6 +59,28 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -76,20 +96,6 @@
   }
 
   .nosotros-text h2 {
-    font-size: 2.5rem;
-  }
-
-  .nosotros-text p {
-    font-size: 1rem;
-  }
-
-  .nosotros-image img {
-    max-height: 300px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .nosotros-text h2 {
     font-size: 2rem;
   }
 
@@ -98,6 +104,17 @@
   }
 
   .nosotros-image img {
-    max-height: 250px;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nosotros-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .nosotros-text p {
+    font-size: 0.8rem;
   }
 }

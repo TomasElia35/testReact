@@ -1,7 +1,7 @@
 /* Estilo principal */
 .inicio {
   height: 100vh; /* Ocupa toda la pantalla */
-  background: url('https://source.unsplash.com/featured/?soccer,jersey') no-repeat center center/cover;
+  background: url('../img/inicio.jpg') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;

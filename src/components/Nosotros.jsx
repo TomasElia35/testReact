@@ -1,6 +1,7 @@
 // src/components/Nosotros.js
 import React from 'react';
 import './styles/Nosotros.css';
+import nosotrosImage from './img/Nosotros.jpg';
 
 
 const Nosotros = () => {
@@ -18,9 +19,10 @@ const Nosotros = () => {
         </div>
         <div className="nosotros-image">
           <img
-            src="https://source.unsplash.com/featured/?soccer,team"
+            src={nosotrosImage}
             alt="Nosotros"
           />
+
         </div>
       </div>
     </section>
